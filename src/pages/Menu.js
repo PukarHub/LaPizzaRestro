@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import axios from 'axios';
 import MenuItem from '../components/MenuItem';
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
 
-//   useEffect(() => {
-//     // Fetch the menu items from the backend
-//     axios.get('/api/menu')
-//       .then(response => setMenuItems(response.data))
-//       .catch(error => console.log(error));
-//   }, []);
+
 
   return (
     <div className="menu">

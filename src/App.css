@@ -1,38 +1,355 @@
-.App {
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* This will hide any horizontal overflow */
+  max-width: 100%;
+}
+
+
+/* navbar style */
+
+.logo {
+  height: 150px;  /* Set the height to fit your design */
+  width: auto;   /* Maintain aspect ratio */
+  margin-right: 10px; /* Optional spacing */
+  border-radius: 50%;
+}
+
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+  background-color: #d5e81af0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+} */
+
+/* Navbar Base Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Dark background */
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;  /* Keeps navbar above other content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Logo Styling */
+.logo {
+  height: 80px;  /* Adjusted for smaller, cleaner look */
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;  /* Space between links */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative; /* For underline hover effect */
+}
+
+.nav-links a {
+  color: #fff;  /* White text for contrast */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f77f00;  /* Highlighted color on hover */
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: #f77f00;  /* Underline color on hover */
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta{
+  margin-right: 50px;
+}
+
+/* Call-to-Action Button */
+.cta-btn {
+  background-color: #f77f00;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 1rem;
+  white-space: nowrap; /* Prevents the button from expanding when text changes */
+  min-width: 250px; /* Set a fixed minimum width for the button */
+  text-align: center; /* Center-align the text */
+}
+
+.cta-btn:hover {
+  background-color: #d66b00;  /* Darker on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;  /* Stack elements vertically */
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;  /* Stack links vertically */
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .cta-btn {
+    margin-top: 1rem;
+  }
+}
+
+
+
+/* Home style */
+.hero {
+  background-image: url('https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 17rem 1rem;
+}
+
+.hero h1 {
+  font-size: 50px 
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cta-buttons .btn {
+  padding: 1rem 2rem;
+  background-color: #f77f00;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.cta-buttons .btn:hover {
+  background-color: #d62828;
+}
+
+/* Menu Style */
+.menu {
+  padding: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-items {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.menu-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.menu-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.menu-item button {
+  background-color: #f77f00;
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Footer Base Styling */
+.footer {
+  background-color: #101010;
+  color: #fff;
+  padding: 3rem 1rem;
+  position: relative;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #f77f00; /* Highlighted header color */
+}
+
+.footer-column p, 
+.footer-column ul {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #f77f00;  /* Hover effect for links */
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.newsletter-input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+  outline: none;
+}
+
+.newsletter-btn {
+  background-color: #f77f00;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-btn:hover {
+  background-color: #d66b00;
+}
+
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-links a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #f77f00;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #181818;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+}
+
+.footer-reservation-btn {
+  background-color: #f77f00;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.footer-reservation-btn:hover {
+  background-color: #d66b00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container, .footer-bottom-container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-reservation-btn {
+    margin-top: 1rem;
   }
 }
+
+

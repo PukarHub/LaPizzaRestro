@@ -120,8 +120,8 @@ body, html {
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;  /* Stack elements vertically */
     padding: 1rem;
+    white-space: nowrap;
   }
 
   .nav-links {

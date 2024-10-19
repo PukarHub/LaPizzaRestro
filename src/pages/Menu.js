@@ -5,7 +5,7 @@ import MenuItem from '../components/MenuItem';
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
 
-
+    console.log(setMenuItems);
 
   return (
     <div className="menu">

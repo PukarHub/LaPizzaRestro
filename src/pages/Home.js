@@ -1,17 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; 
+
 
 const Home = () => {
+    const { t } = useTranslation(); 
+
   return (
     <div className="home">
       <header className="hero">
-        <h1>Welcome to La Pizza Ristorante Italiano</h1>
-        <p>Experience the best pizzas in Portugal!</p>
+      <h1>{t('welcome_message')}</h1>  
+        <p>{t('experience_message')}</p>
         <div className="cta-buttons">
-          <Link to="/" className="btn">View Menu</Link>
-          <Link to="/" className="btn">Reserve a Table</Link>
-          <Link to="/" className="btn">Order Online</Link>
-        </div>
+          <Link to="/" className="btn">{t('view_menu')}</Link>
+          <Link to="/" className="btn">{t('reserve_table')}</Link>
+          <Link to="/" className="btn">{t('order_online')}</Link>
+          </div>
       </header>
     </div>
   );
